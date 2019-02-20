@@ -43,10 +43,8 @@ print(lst);
 for _ in lst:
     if _%2==0:
         a=lst.index(_)
-        lst.pop(a)
-        lst.insert(a,_/4)
+        lst[a]=_/4
     else:
         a=lst.index(_)
-        lst.pop(a)
-        lst.insert(a,_*2)
+        lst[a]=_*2
 print(lst)
