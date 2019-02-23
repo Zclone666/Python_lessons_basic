@@ -4,7 +4,20 @@
 equation = 'y = -12x + 11111140.2121'
 x = 2.5
 # вычислите и выведите y
+import re
+import decimal
+match=re.search('\d+'+'x',equation)
+eq=equation.replace(match[0],match[0].replace('x','*'+str(x)))
+#mat=re.compile('[-+]\d+')
+#print(eq.count(mat.search(eq))
+#print(match[0])
+exec(eq)
+print(y)                                 
 
+#////////>
+
+#i=equation.index(['\d+'])
+#print(i)
 
 # Задание-2: Дата задана в виде строки формата 'dd.mm.yyyy'.
 # Проверить, корректно ли введена дата.
