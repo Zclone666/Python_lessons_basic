@@ -1,3 +1,4 @@
+#pylint:disable=W0312
 # Задание-1: уравнение прямой вида y = kx + b задано в виде строки.
 # Определить координату y точки с заданной координатой x.
 
@@ -14,7 +15,15 @@ eq=equation.replace(match[0],match[0].replace('x','*'+str(x)))
 exec(eq)
 print(y)                                 
 
-#////////>
+
+print('\n#######\n')
+""""
+e=equation[equation.index('='):].replace('x',f'*{x}')
+lis=[0,9,7,'h','u','h']
+lis[:3]=['j','k','f','j']
+print(lis)
+"""
+    #////////>
 
 #i=equation.index(['\d+'])
 #print(i)
@@ -33,9 +42,19 @@ print(y)
 date = '01.11.1985'
 
 # Примеры некорректных дат
-date = '01.22.1001'
-date = '1.12.1001'
-date = '-2.10.3001'
+date1 = '01.22.1001'
+date2 = '1.12.1001'
+date3 = '-2.10.3001'
+
+match=re.compile('\d\d.\d\d.\d\d\d\d')
+fsts=match.match(date)
+if fsts!=None:
+	if int(date[0:2])<=31 and int(date[3:5])<=12:
+		print(fsts[0])
+	else:
+		print('date incorrect')
+else:
+	print('date incorrect')
 
 
 # Задание-3: "Перевёрнутая башня" (Задача олимпиадного уровня)
